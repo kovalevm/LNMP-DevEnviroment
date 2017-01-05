@@ -1,6 +1,5 @@
 version: '2'
 services:
-#--------------API------------------------
   nginx:
       build: ./nginx/
       ports:
@@ -22,7 +21,7 @@ services:
           XDEBUG_CONFIG: remote_host=127.0.0.1
 
   app:
-      image: "php:7.1-fpm"
+      build: ./php/
       volumes:
           - "./app:/var/www/html"
       command: "true"

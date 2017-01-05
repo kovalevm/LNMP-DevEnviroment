@@ -13,6 +13,14 @@ RUN apt-get update && \
     curl -sL https://deb.nodesource.com/setup | bash - && \
     apt-get -y install python build-essential nodejs
 
+# Packaged dependencies
+RUN apt-get update && apt-get install -y \
+	bash-completion \
+	git \
+	vim \
+	vim-common \
+	zip
+
 # Install nodemon
 RUN npm install -g nodemon
 
